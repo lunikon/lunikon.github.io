@@ -1,2 +1,1 @@
-lunikon.github.io
-=================
+This is my blog at www.lunikon.net

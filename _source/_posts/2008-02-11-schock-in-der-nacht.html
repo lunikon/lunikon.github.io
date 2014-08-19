@@ -1,0 +1,19 @@
+---
+layout: post
+title: Schock in der Nacht
+date: 2008-02-11 23:50:30.000000000 +01:00
+categories:
+- Entwicklung
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_lock: '1258816494'
+  _edit_last: '2'
+author: 
+---
+<p>Als ob der Tag nicht turbulent gewesen wäre (auch wenn es die meisten nicht mitbekommen haben, der Start von Devau war nicht ganz reibungslos), wurde es heute Abend noch ein Stück besser. In der Updateroutine von Idlewild tauchte plötzlich ein Fehler auf. Nichts weltbewegendes, eigentlich nur eine Kleinigkeit. Aber es behinderte den Hintergrundjob und daher musste ein Fix her. Da die beiden alten Server sowieso den neuen Patch erhalten sollten war das eigentlich kein Problem: Fehler behoben, Patch eingespielt, alles läuft.</p>
+<p>Naja, fast. Nach eine Runde Fernsehen mit der Freundin merke ich plötzlich, dass im Log was schief läuft. Wieder stockt das Update auf Idlewild und der Fehler wird sofort offensichtlich: Das Spiel hat &quot;vergessen&quot;, welches seine &quot;eigenen&quot; Unternehmen sind, also die Unternehmen, welche zum Beispiel die Flugzeuge verleasen. Grund hierfür waren uralte Codepartien, die die IDs dieser Unternehmen fix definiert hatten und die nach jeder Änderung in der ID-Sequenz neu angepasst werden müssen. Dies war auch mit dem neusten Patch der Fall, da mit diesem ein neuer Installer für AirlineSim Einzug gehalten hat, der beim aufsetzen des Spiels etwas anders vorgeht als bisher. Auf Devau ist das kein Problem, immerhin wurde diese Spielwelt mit dem neuen Installer aufgesetzt und alles passt. Beim einspielen des Patches auf Idlewild hatte ich aber nicht daran gedacht, dass hier noch das alte Format im Einsatz war. Die Folge: Die IDs waren verschoben, Operationen die auf &quot;offizielle Unternehmen&quot; zugreifen mussten erwischten mitunter die falschen oder garkeine. Eigentlich ein triviales Problem...aber das sind ja die meisten Bugs, nur dass in diesem Fall die Auswirkungen recht gravierend hätten sein können. Ehrlich gesagt ist auch noch nicht bekannt, was für Schäden das ganze möglicherweise angerichtet hat. Das wird sich aber in den kommenden Tagen zeigen.</p>
+<p>Der Schock jedenfalls war die Tatsache, dass man dieses Problem nicht &quot;mal eben&quot; behebt. Also wurde dieses alte, fehleranfällige ID-Geschiebe, welches an nicht gerade wenigen Stellen im Code auftaucht, innerhalb einer halben Stunde wie ihm Wahn &quot;wegprogrammiert&quot;. Jetzt trägt jedes Unternehmen einen eindeutigen Flag, der es als &quot;AS&quot; oder &quot;nicht-AS&quot; identifiziert. Trotzdem...gut für die Nerven ist das nicht.</p>
+<p />

@@ -1,0 +1,19 @@
+---
+layout: post
+title: Zeit für eine Frischzellenkur?
+date: 2007-10-23 08:12:27.000000000 +02:00
+categories:
+- Entwicklung
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_lock: '1258815918'
+  _edit_last: '2'
+author: 
+---
+<p>Keines der letzten Updates für AirlineSim enthielt nicht irgendeine Änderung bezüglich des Aufkommenssystems. Die neuste Version 1.3.3 macht da keinen Unterschied und bringt wieder einige &quot;Verbesserungen&quot; mit. Doch wie man sich eigentlich hätte denken können sind die erzielten Effekte nicht die, die man sich erwünscht. Entweder die neuen Regelungen sind wirkungslos, treffen die Falschen oder machen das Spiel unnötig schwerer und komplizierter. Auch wenn ich lange versucht habe ohne derartige Schritte auszukommen wird es wohl oder übel langsam Zeit, dass &quot;rumdoktern&quot; einzustellen und sich an die Ursachen des Problems zu machen.</p>
+<p>Jeder der AirlineSim seit einer der ersten Versionen spielt, also schon mehr als 2 oder 3 Jahre dabei ist, weiß, dass einige Features in ihrer Art seit ihrer ersten Implementierung praktisch unverändert von einer Version in die nächste &quot;mitgenommen&quot; wurden. In der Tat war unser Ziel bei der Umsetzung der Java-Version von AirlineSim, zunächst einmal alle bekannten Features mit der neuen Technik umzusetzen statt große neue Pläne zu schmieden. Das ganze Schritt für Schritt anzugehen sozusagen. Insbesondere als uns unser Java-Experte verlassen hatte erschien uns dieses Vorgehen als das erfolgversprechendste. Spätestens jetzt zeigt sich aber, dass diese Taktik wohl so nicht aufgeht. Wichtige Komponenten des Spiels funktionieren mit den Funktionalitäten, welche die neue Technik ermöglicht, schlicht nicht mehr. Ticketpreise und Kosten, Parameter und Bewertungen sind ein Flickwerk jahrelanger Entwicklung und wurden nie tatsächlich und gamedesign-technisch aufeinander abgestimmt. Dies liegt natürlich auch daran, dass die Kombinationsmöglichkeiten gegen unendlich gehen und man praktisch nie alle &quot;Lücken&quot; durch die sich zum Beispiel findige Spieler mogeln können, im Auge behalten kann. Andereseits wäre es eben dann angebracht ein System zu entwerfen, dass möglichst selbstregelnd ist und auf irgend eine Weise allzu heftige Extremsituationen verhindert. Wie selbst der Laie vermuten kann ist das ein nicht ganz einfaches Unterfangen.</p>
+<p>Wie dem auch sei, diese Probleme stehen ganz oben auf meiner Agenda, insbesondere weil die mir zur Verfügung stehende zeit sehr knapp bemessen ist. Ich werde also versuchen in den kommenden Wochen ein Konzept zu entwerfen, welches Serviceeinstellungen (für Serviceprofile und Flugzeugbestuhlungen warten die Überareitungspläne sowieso schon lange in der Schublade), Preisbereiche, Kosten, Flugbewertung und letztendlich Aufkommensverteilung unter einen Hut bringt. Da dies wie gesagt eine ziemliche Mammutaufgabe werden wird, werde ich vermutlich nicht dazu kommen viele Unschönheiten oder Fehler zu beheben...ich vertraue hier voll und ganz auf Marcus. Wahrscheinlich werden wir die Entwicklung in 2 Branches aufspalten: Der 1.3-Zweig mit gelegentlichen, kleinere Updates um Fehler zu beheben und einem 1.4-Zweig, in dem das System tiefgreifender überarbeitet wird. Wann letzterer dann das Licht der Welt erblickt bleibt natürlich offen. Ich kann mir aber Vorstellen, dass die Arbeiten bis in das erste Quartal 2008 dauern könnten.</p>
+<p>Nun denn, ich stürze mich mal in Excel...</p></p>

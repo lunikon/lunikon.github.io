@@ -1,0 +1,18 @@
+---
+layout: post
+title: Flight Patterns
+date: 2006-11-29 18:42:07.000000000 +01:00
+categories:
+- Entwicklung
+- Web x.0
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_lock: '1258814352'
+  _edit_last: '2'
+author: 
+---
+<p>
+Heute wurde ich im AirlineSim-Chat auf eine <a title="Aaron Koblin, Flight Patterns" target="_blank" href="http://www.aaronkoblin.com/work/faa/">interessante Seite</a> aufmerksam gemacht. Sie beschäftigt sich mit etwas, von dem ich schon seit langem für AirlineSim träume: Eine animierte Darstellung aller Flüge in einem bestimmten Zeitraum. Leider hatte ich bisher keine Zeit mich intensiver mit soetwas zu beschäftigen und ganz abgesehen davon hatte ich immer das Gefühl, dass soetwas die ohnehin vorhandenen Performance-Probleme bei AS noch weiter verschlimmern würde. Aber jetzt reizt mich die Thematik wieder etwas mehr. An Videos will ich erstmal nicht denken, vorallem weil mir jegliches technisches und künstlerisches Know-How dafür fehlt, aber ein Standbild aller derzeit in der Luft befindlichen Flüge sollte bei AS eigentlich über das sowieso verfügbare Karten-Framework recht schnell und einfach realisierbar sein. Wie es dabei mit der Belastung des Servers aussieht müsste man noch abschätzen. Derzeit haben wir in der Community-Runde etwa 651.000 eingeplante Flüge. Ich vermute also, dass zu einem gegebenen Zeitpunkt sicherlich an die 30.000 Flüge in der Luft sind. Für jeden der Flüge müssten in Abhängigkeit der Geschwindigkeit des Flugzeuges und der Start- und Zielkoordinaten die aktuellen Koordinaten der Maschine errechnet werden. Ingesamt müssten also für die Berechnungen neben den eigentlich Flugdaten auchnoch mindestens die Datensätze der Maschine, deren Typs, des Abflughafens und des Zielflughafens ausgelesen werden. Das wird ein dicker Join, klingt aber eigentlich nicht wirklich kompliziert...evt. probiere ich da in den nächsten Wochen mal was. Aber versprechen möchte ich nichts. Ach ja, vergesst nicht die Videos auf der eigentlichen Seite anzuschauen, es ist sehr sehenswert.</p>

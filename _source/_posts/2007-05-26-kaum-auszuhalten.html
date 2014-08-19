@@ -1,0 +1,19 @@
+---
+layout: post
+title: Kaum auszuhalten
+date: 2007-05-26 18:31:16.000000000 +02:00
+categories:
+- Entwicklung
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_lock: '1258814802'
+  _edit_last: '2'
+author: 
+---
+<p>Immer dann, wenn man dringend wichtige Dinge zu erledigen hätte, fallen einem dutzende andere ein, die man just in diesem Moment lieber machen würde. Ich will nicht behaupten, dass mich die Performance-Probleme bei AirlineSim glücklich machen, aber nach einer Lösung dafür zu suchen ist und bleibt eine spannende und spaßige Angelegenheit. Und genau dass würde ich jetzt lieber tun als zu lernen oder andere anstehende Aufgaben abzuarbeiten... </p>
+<p>Schon länger bin ich am überlegen, wie man ein Browsergame ohne eine relationale Datenbank effizient umsetzen könnte. In meinen Augen, und darin bestätigen mich die jahrelangen Erfahrungen mit AirlineSim, sind sie einfach nicht für diese Art von Projekt geeignet. Schon vor längerem wurde ich daher auf Objektdatenbanken aufmerksam, die Objekte direkt und ohne jegliche Form von Meta-Information speichern und verwalten können. Der Gedanke ist extrem verlockend: Kein XML, keine Annotations, keine zeitraubende und fehleranfällige Konfiguration mehr. Einfach in Objekten programmieren, wie man sich das in einer objektorientierten Sprache wie Java vorstellt. Was mich allerdings immer skeptisch gestimmt hat war und ist die Frage nach der Performance. Wie gut kommt eine derartige Datenbank mit sehr großen Datenmengen und komplexen Objektgraphen klar? Die Datenbank von AirlineSim besteht zum gegenwärtigen Zeitpunkt aus etwa 80 Tabellen und speichert bereits nach recht kurzer Spielzeit eine Datenmenge im Bereich von mehreren hundert Megayte in Millionen von Datensätzen. </p>
+<p>Der bekannteste Vetreter der Objektdatenbank in der Javawelt ist m.W. db4o, ein ehemals kommerzielles Projekt was jetzt unter der GPL weiterentwickelt wird. Heute bin ich über einen <a title="db4o Performance" href="http://db4o-tools.blogspot.com/2006/08/db4o-performance.html">Blogeintrag</a> gestolpert, der sich genau mit meiner Frage beschäftigt: Wie schnell ist db4o eigentlich? Die Ergebnisse eines Benchmarks, welches anhand einiger Testcases db4os Performance mit denen anderer, üblicher Datenbank-ORM-Kombinationen vergleicht, ist durchaus beeindruckend und nimmt mir etwas die Skepsis was dieses Thema betrifft. Das schlimme daran ist, dass es mir nun noch viel mehr unter den Nägeln brennt, mit dieser Library zu experimentieren und evt. das Aufkommenssystem in Form eines Prototyps unter db4o zu testen. Aber ich habe dazu keine Zeit! Kaum auszuhalten! Hätte der Tag nur 48 Stunden...</p>
+<p />

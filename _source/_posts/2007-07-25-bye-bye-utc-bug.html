@@ -1,0 +1,20 @@
+---
+layout: post
+title: Bye bye, UTC-Bug
+date: 2007-07-25 13:43:35.000000000 +02:00
+categories:
+- Entwicklung
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '2'
+  _edit_lock: '1258815073'
+author: 
+---
+<p>Er ist nach dem legendären &quot;Milliarden-Bug&quot; wohl einer der berühmtesten und nervigsten Bugs von AS (gewesen): Der UTC-Bug. Wie angekündigt habe ich mich die Tage daran gemacht, ihn endlich und ein für alle Mal zu beseitigen. Dazu habe ich zunächst einen aufwändigen automatisierten Test geschrieben, um den Fehler zuverlässig und automatisch reproduzieren zu können. Eine Maschine hat einen einfachen Flugplan mit einem Round-Trip pro Tag zugewiesen bekommen. Der erste der beiden täglichen Flüge hatte eine Abflugszeit, die in Lokal- und UTC-Zeit an unterschiedlichen Tagen lag. Dann wurden mehrere Runden von Flugeinbuchungen durchgeführt, um die fehlerhafte Generierung der Fluginstanzen zu erreichen. Nach einem einfachen Kriterium wurden dann ermittelt, ob der Fehler aufgetreten ist: Ein Flugplan, wie er im Test verwendet wird, führt bei korrekter Erzeugung von Fluginstanzen dazu, dass es von beiden Flügen gleich viele Instanzen gibt oder dass der Mengenunterschied genau bei 1 liegt. Zum Beispiel wären Flugabfolgen wie A-B-A (Unterschied 1) oder A-B-A-B (Unterschied 0) möglich. Tritt der UTC-Fehler auf, dann könnte die Abfolge aussehen wie A-B-A-A-A. Der Mengenunterschied läge bei 3. </p>
+<p>So getan war es dann vergleichsweise schnell möglich, den Fehler zuverlässig zu reproduzieren und zu erkennen. Dann begann die Suche nach der Ursache. Es zeigte sich, dass ich bisher einfach an der falschen Ecke gesucht hatte. Meine Vermutung, dass es eine extrem triviale Ursache haben muss, bestätigte sich aber: Die UTC-Startzeit der Flugnummer wurde an einer Stelle im Code wie eine Wochenzeit behandelt und falsch umgerechnet. Nachdem ich die Umrechnung für eine Tageszeit korrigiert habe, war der Fehler verschwunden.</p>
+<p>Soviele Stunden Arbeit, soviel Streß für die Spieler und so ein kleiner Fehler...jetzt ist dieses Kapitel endlich vorbei! :-)</p>
+<p><i>PS: Der Fehler wird in der aktuell laufenden Runde nicht behoben, sondern erst nach einem (derzeit nicht geplanten) Reset. Der neue Server wird natürlich ohne den Fehler starten.</i></p>
+<p />

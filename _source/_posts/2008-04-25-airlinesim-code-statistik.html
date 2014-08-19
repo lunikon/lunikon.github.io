@@ -1,0 +1,18 @@
+---
+layout: post
+title: AirlineSim Code Statistik
+date: 2008-04-25 22:51:32.000000000 +02:00
+categories:
+- Entwicklung
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_lock: '1258816559'
+  _edit_last: '2'
+author: 
+---
+<p>Heute habe ich endlich mal ein kleines <a title="Matrics" href="http://metrics.sourceforge.net/">Plugin für Eclipse</a> installiert, mit dem man die eine oder andere Zahl über den Quellcode eines Projekts errechnet bekommt. Natürlich will ich euch das Ergebnis nicht vorenthalten. Also im Folgenden ein (wirklich) kleiner Absatz mit einigen Kennziffern zu AirlineSims Dimensionen in schnöden Zahlen:</p>
+<p>Insgesamt hat der Kerncode von AirlineSim etwa 60.000 Codezeilen verteilt auf knapp 900 Klassen, was bei Java in etwa der Anzahl an Dateien entspricht. Diese verteilen sich auf 60 Verzeichnisse und enthalten insgesamt über 5000 Methoden. Keine Sorge, letzterer Wert ist vor allem wegen der üblichen Getter und Setter so hoch, welche in Java (und anderen objektorientieren Sprachen) zum setzen und lesen der Attribute verwendet werden.</p>
+<p>Diese Zahlen erscheinen schon recht hoch...aber darin tauchen alle nicht-Java Dateien noch nicht auf. Lokalisierungsdateien die alle Texte enthalten, JSP-Templates welche für die Darstellung der HTML-Oberfläche zuständig sind und von denen es mindestens eines pro in AirlineSim sichtbarer Seite gibt sowie alle anderen Dateien wie Konfigurations- und Grafikdateien müssten also noch dazu gerechnet werden. </p>

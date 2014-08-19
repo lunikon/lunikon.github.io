@@ -1,0 +1,21 @@
+---
+layout: post
+title: Das Heathrow-Phänomen
+date: 2007-06-23 01:29:07.000000000 +02:00
+categories:
+- Entwicklung
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_lock: '1258814887'
+  _edit_last: '2'
+author: 
+---
+<p>Schon lange wollte ich dazu etwas schreiben, jetzt komme ich endlich dazu. Es geht darum, warum ausgerechnet London Heathrow in AirlineSim regelmäßig für Probleme sorgt und mitunter das komplette Spiel zum Absturz bringt, während der ganze Rest des Spiels - von den üblichen Bugs und Kinderkrankheiten mal abgesehen - problemlos funktioniert. </p>
+<p>Gerade ist AirlineSim ein weiteres Mal neu gestartet, und da wird es wieder besonders deutlich: Innerhalb der ersten 12 bis 24 Stunden haben dutzende von Airlines Niederlassungen in Heathrow gegründet, hunderte von Flügen wurden eingeplant. Soweit nichts besonderes. In Frankfurt oder Paris ist das genauso der Fall. Warum aber fällt die Aufkommensberechnung in LHR auf die Nase, in FRA oder CDG aber nicht? Das hat diverse Gründe, die ich jetzt einmal versuche aufzuzählen.</p>
+<p>London liegt, wie Paris oder Frankfurt, in Europa. Gleichzeitig kommen die meisten AirlineSim-Spieler aus Europa bzw. aus Deutschland. Spieler, die länger dabei sind, kennen das Spiel und lassen sich weltweit in Nischen oder zumindest nicht in Europa nieder. Den Rest verschlägt es aber genau dort hin. Die blutigen Anfänger zieht es dann nach Deutschland, in vielen Fällen an den &quot;Heimatflughafen&quot; (das selbe gilt für Schweizer die in die Schweiz gehen und Österreicher die sich in Österreich niederlassen). Alle, die auf einen Blick merken, dass Deutschland eventuell etwas überfüllt sein könnte, suchen sich dann einen anderern Flughafen im gerade noch bekannten Ausland, also irgendwo in England, Spanien, Frankreich oder ähnlichen Ländern. Nun, immernoch keine Erklärung für das Problem: Der Beschreibung nach müsste in Deutschland ein Problem auftreten.</p>
+<p>Nicht ganz. Denn alle die, die jetzt einen netten Flughafen im europäischen Ausland gefunden haben brauchen nun Flugziele. Und wenn man sich schon nicht an den großen Hubs niedergelassen hat, dann kann man sie wenigstens anfliegen. Das führt zu einer interessanten Konstellation: London Heathrow ist (zum Beispiel was Slots betrifft) im Spiel bei weitem nicht ausgelastet, obwohl praktisch jede etwas größere europäische Airline, sei es nun mit oder ohne Konzept, diesen Flughafen anfliegt. Viele hundert Flüge einzelner Airlines...und jeder einzelne führt zum Hub der entsprechenden Airline. Sei es nun Frankfurt, Stuttgart, Toulouse oder Niederrhein. Also um es zusammenzufassen: Der Großteil der Airlines in AirlineSim hat einen Hub in Europa, jeder dieser Hubs ist mit London Heathrow verbunden und somit hat ein Passagier in LHR die Wahl über jeden einzelnen dieser Hubs seine Reise anzutreten. Millionen von Möglichkeiten. </p>
+<p>Aber eigentlich immernoch nicht wirklich einzigartig. In Frankfurt dürfte es ähnlich aussehen. So ist es auch, allerdings ist London nicht gleich Heathrow. London ist die größte Metropolregion Europas und in AirlineSim, der Realität entsprechend, mit fünf Flughäfen vertreten. Insgesamt hat LHR 12 Flughäfen in seinem Verkehrsverbund von denen viele ihrerseits große und viel beflogene Hubs sind. Allein durch dieses Netz kommt eine immense Anzahl an möglichen Verbindungen zu stande. In Verbindung mit dem oben beschriebenen Effekt explodiert die Menge der Verbindungen also förmlich. Sie wird so groß, dass der Server mit dem schieren Datenvolumen nicht mehr klar kommt und sich mit einem &quot;OutOfMemory&quot; verabschieded.</p>
+<p>Ich hoffe ich konnte etwas Licht in die Sache bringen. Wie man sieht ist es also ein Problem, das in der Natur der Sache liegt und sich nur schwer durch Optimierungen beheben lässt. Vermutlich brauchen wir einfach mehr RAM :)</p>
