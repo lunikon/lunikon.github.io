@@ -19,47 +19,47 @@ author:
 ---
 <p>At AirlineSim we use <a href="http://www.jasig.org/cas">CAS</a> for user authentication and right now we are in the process of migrating parts of the game to the great web framework <a href="http://wicket.apache.org">Wicket</a>. Yesterday I thought about a way of integrating both in a way that a user is automatically redirected to a login page when he lacks access rights and that he returns to the exact same page after he has completed the login. All should be done in a "Wicket way". Below you find my approach, please let me know when you find errors or if you can think of ways so solve it in a better way. For demonstration purposes I use simplified code passages. It looks slighty more complex in AirlineSim.</p>
 <p>The first step is to check in a custom <a href="http://wicket.apache.org/docs/1.4/org/apache/wicket/authorization/strategies/page/AbstractPageAuthorizationStrategy.html">PageAuthorizationStrategy</a> whether a CAS assertion exists. I'm using the filters provided by the Jasig CAS Client to place the assertion in an AssertionHolder. If no assertion is provided (which means the user is not logged in) I use Wicket's intercept page mechanism to redirect the user to CAS.</p>
-{% highlight java linenos %}
-public class CASPageAuthorizationStrategy
-		extends AbstractPageAuthorizationStrategy
-{
-	@Override
-	protected <T extends Page> boolean isPageAuthorized(Class pageClass)
-	{
-		Assertion assertion = AssertionHolder.getAssertion();
-		if (assertion == null && isLoginRequired(pageClass))
-		{
-			StringBuffer url = new StringBuffer();
-			url.append("https://your.cas.installation/login?service=");
-			try
-			{
-				url.append(URLEncoder.encode(
-					"http://your.cas.clientapp/app/redirectAfterLogin", "UTF-8"));
-			}
-			catch (UnsupportedEncodingException e)
-			{
-				e.printStackTrace();
-			}
-			RedirectPage intercept = new RedirectPage(url);
-			throw new RestartResponseAtInterceptPageException(intercept);
-		}
-		return true;
-	}
-}
-{% endhighlight %}
+<p>[cc lang="java"]<br />
+public class CASPageAuthorizationStrategy<br />
+		extends AbstractPageAuthorizationStrategy<br />
+{<br />
+	@Override<br />
+	protected <t extends page> boolean isPageAuthorized(Class<t> pageClass)<br />
+	{<br />
+		Assertion assertion = AssertionHolder.getAssertion();<br />
+		if (assertion == null && isLoginRequired(pageClass))<br />
+		{<br />
+			StringBuffer url = new StringBuffer();<br />
+			url.append("https://your.cas.installation/login?service=");<br />
+			try<br />
+			{<br />
+				url.append(URLEncoder.encode(<br />
+					"http://your.cas.clientapp/app/redirectAfterLogin", "UTF-8"));<br />
+			}<br />
+			catch (UnsupportedEncodingException e)<br />
+			{<br />
+				e.printStackTrace();<br />
+			}</p>
+<p>			RedirectPage intercept = new RedirectPage(url);<br />
+			throw new RestartResponseAtInterceptPageException(intercept);<br />
+		}<br />
+		return true;<br />
+	}<br />
+}<br />
+[/cc]</p>
 <p>As you can see, the code is pretty much straight forward: When the user isn't logged in and a login is required ("isLoginRequired" just for demonstration purposes), the URL for the redirect to CAS is built. Since I'm using an intercept page, the path in the service parameter always points to "/redirectAfterLogin", but more about that in a minute. The URL is passed to a new instance of RedirectPage which itself is passed to the RestartResponseAtInterceptPageException. When this exception is thrown, Wicket will "remember" the page the user just tried to call and redirect him to the RedirectPage. The latter will immediately redirect him to CAS for login. </p>
 <p>So what about the "/redirectAfterLogin" in the service path? At this location I mounted the following page class:</p>
-{% highlight java linenos %}
-public class RedirectAfterLoginPage
-		extends WebPage
-{
-	public RedirectAfterLoginPage()
-	{
-		super();
-		if (!continueToOriginalDestination())
-			setResponsePage(getApplication().getHomePage());
-	}
-}
-{% endhighlight %}
+<p>[cc lang="java"]<br />
+public class RedirectAfterLoginPage<br />
+		extends WebPage<br />
+{<br />
+	public RedirectAfterLoginPage()<br />
+	{<br />
+		super();</p>
+<p>		if (!continueToOriginalDestination())<br />
+			setResponsePage(getApplication().getHomePage());<br />
+	}<br />
+}<br />
+[/cc]</p>
 <p>Its job is very simple. All it does is redirecting the user to the page Wicket "remembered" when the RestartResponseAtInterceptPageException was thrown. Since the user might access this page by accident and there is no markup for it, make sure to provide a response page even if no original destination is available. Otherwise the user will get to see an error page. I used the application's home page as the default here.</p>
 <p>And that's basically it. Please note that the code snippets above are untested pseude code and will most definitely have to be adjusted to your environment. </t></t></p>

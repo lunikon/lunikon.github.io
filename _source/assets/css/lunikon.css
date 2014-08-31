@@ -2,9 +2,29 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #444;
+  background-color: #f7f7f7;
+} 
+
+a,
+a:hover,
+a:focus {
+	color: #580000;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
+h1, h2, h3,
+h1 a, h2 a, h3 a {
+	color: #333;
+}
+
+.text-meta {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
+	font-size: 1.1em;
+	line-height: 1.5;
+	color: #777;
+}
+
 .header,
 .content,
 .footer {
@@ -12,23 +32,57 @@ body {
   padding-left: 15px;
 }
 
-/* Custom page header */
-.header {
-  background-image: url(/assets/img/header.jpg);
+.article {
+	
 }
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  padding-bottom: 19px;
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
+
+.article .post-header {
+	margin-bottom: 12px;
+}
+
+.article .post-header h2 {
+	margin-bottom: 2px;
+}
+
+.article .post-header p {
+	font-size: 85%;
 }
 
 /* Custom page footer */
 .footer {
+  position: relative;
+  margin-top: 19px;
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
+
+  text-align: right;
+  font-size: 85%;
+}
+
+.footer .icons {
+	position: absolute;
+	top: 10px;
+}
+
+/* Homepage */
+
+#home ul.archive {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 25px;
+}
+
+#home ul.archive li span {
+	display: inline-block;
+	width: 90px;
+	margin-right: 10px;
+	text-align: right;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
+	font-size: 0.85em;
+	line-height: 1;
+	color: #777;
 }
 
 /* Customize container */
@@ -41,15 +95,19 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */
-  .header,
-  .content,
+  .header,  
   .footer {
     padding-right: 0;
     padding-left: 0;
   }
+
+  .content {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
   /* Space out the masthead */
   .header {
-	height: 120px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
   }
 }

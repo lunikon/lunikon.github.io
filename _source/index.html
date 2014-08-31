@@ -1,0 +1,31 @@
+---
+---
+
+<div class="row" id="home">
+	<div class="col-md-12">
+
+		<div class="article">
+			<div class="post-header">
+				<h2><a href="{{ site.posts[0].url }}">{{ site.posts[0].title }}</a></h2>
+				<p class="text-meta">{{site.posts[0].date | date: '%B %d, %Y'}}, <a href="{{ site.posts[0].url }}#disqus_thread">add a comment</a></p>
+			</div>
+			{{site.posts[0].excerpt}}
+			<p class="text-right"><a href="{{ site.posts[0].url }}">Read more...</a></p>
+		</div>
+
+		<h2>Previous Posts</h2>
+
+		<ul class="archive">
+		{% for post in site.posts %}
+			{% if forloop.index > 1 %}
+			<li>
+				<span>{{post.date | date_to_string }}</span>
+				<a href="{{ post.url }}">{{ post.title }}</a>
+			</li>
+			{% endif %}
+		{% endfor %}
+		</ul>
+	
+	</div>
+</div>
+

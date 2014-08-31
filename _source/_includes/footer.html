@@ -1,10 +1,27 @@
-			</div>
 		</div>
 		
-		<div class="footer">
-			<p>&copy; Company 2014</p>
+		<div class="footer text-meta">
+			<div class="icons">
+				<a href="{{site.url}}/feed/" title="RSS Feed"><span class="fa fa-rss fa-2x"></span></a>
+				<a href="https://www.twitter.com/lunikon" title="lunikon on Twitter"><span class="fa fa-twitter fa-2x"></span></a>
+			</div>
+			<p>
+				<a href="{{site.url}}/about/">About</a> |
+				<a href="{{site.url}}/impressum/">Impressum</a> |
+				&copy; Martin Simons {{site.time | date: '%Y' }}
+			</p>
 		</div>
 	</div>   	
+
+		<script type="text/javascript">
+	    var disqus_shortname = 'lunikon';
+	    (function () {
+	        var s = document.createElement('script'); s.async = true;
+	        s.type = 'text/javascript';
+	        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+	        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+	    }());
+	    </script>	    
 
   </body>
 </html>

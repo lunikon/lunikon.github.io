@@ -1,5 +1,6 @@
 source:     _source
 timezone:   Europe/Berlin
+excerpt_separator: "\n"
 permalink:  "/:year/:month/:day/:title/"
 defaults:
     -
