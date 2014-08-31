@@ -12,4 +12,6 @@ I don't remember really. I think it is vaguely referring to a space program by a
 
 ### What's this blog about?
 
-This blog is about...well...anything. I don't write about anything in particular and quite often I don't write at all. Chances are that many posts will deal with AirlineSim, good films I watched (usually I don't write about the bad ones), computer gaming and software development in general, occassional ramblings about the world we live in and all the toys adults tend to spend their money on.
+This blog is about...well...anything. I don't write about anything in particular and quite often I don't write at all. Chances are that many posts will deal with AirlineSim, good films I watched (usually I don't write about the bad ones), computer gaming and software development in general, occasional ramblings about the world we live in et cetera.
+
+It's likely that, if I come across an interesting link or article online, I will [tweet it](https://www.twitter.com/lunikon) instead of writing a lengthy blog post about it.
