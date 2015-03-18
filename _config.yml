@@ -9,4 +9,3 @@ defaults:
             layout: "default"
 gems:
     - jekyll-sitemap
-highlighter: rouge
