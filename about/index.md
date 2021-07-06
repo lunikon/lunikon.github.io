@@ -4,7 +4,7 @@ title: About lunikon
 
 ## {{page.title}}
 
-My name is Martin Simons and I'm a guy-with-a-business-degree-turned-software-engineer. Currently I live and work in the beautiful little town of Freising, Germany and I make a living running the online airline simulation game [AirlineSim](http://www.airlinesim.aero) and the freelance software development business [simulogics](http://www.simulogics.net).
+My name is Martin Simons and I'm a guy-with-a-business-degree-turned-software-engineer. Currently I live and work close to Darmstadt, Germany and I make a living running the small indie game studio [simulogics](https://simulogics.net).
 
 ### What's in the name?
 
